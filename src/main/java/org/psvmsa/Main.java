@@ -10,7 +10,11 @@ public class Main{
         JDABuilder jdaBuilder = JDABuilder.createDefault(System.getenv("TOKEN"));
 
         jdaBuilder.addEventListeners(new TuxxyPing());
+        jdaBuilder.addEventListeners(new VoiceJoinPinger());
+
+
         jdaBuilder.enableIntents(GatewayIntent.MESSAGE_CONTENT);
+        jdaBuilder.enableIntents(GatewayIntent.GUILD_VOICE_STATES);
 
         jdaBuilder.build();
     }

@@ -17,10 +17,10 @@ public class TuxxyPing extends ListenerAdapter
             Message message = event.getMessage();
             String content = message.getContentRaw();
 
-            if (content.contains("!ping"))
+            if (content.startsWith("!ping"))
             {
                 MessageChannel channel = event.getChannel();
-                channel.sendMessage("Tu esti pidar").queue();
+                channel.sendMessage("Pidaru o zis: " + content).queue();
 
                 System.out.println("mama moarta");
             }
