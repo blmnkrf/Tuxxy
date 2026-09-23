@@ -9,7 +9,7 @@ public class VoiceJoinPinger extends ListenerAdapter {
     public void onGuildVoiceUpdate(GuildVoiceUpdateEvent event) {
         if (/*event.getChannelLeft() == null && */event.getChannelJoined() != null) {
             var member = event.getMember();
-            var channelJoined = event.getChannelJoined();
+            var channelJoined = event.getChannelJoined().getName();
 
             TextChannel tuxxyChannel = event.getJDA().getTextChannelById(1552320563572252784L);
             tuxxyChannel.sendMessage("@everyone " + member.getEffectiveName() + " IS STUDYING " + channelJoined + "!").queue();
