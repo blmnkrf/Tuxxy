@@ -11,10 +11,11 @@ public class Main{
 
         jdaBuilder.addEventListeners(new TuxxyPing());
         jdaBuilder.addEventListeners(new VoiceJoinPinger());
-
+        jdaBuilder.addEventListeners(new WhiteList());
 
         jdaBuilder.enableIntents(GatewayIntent.MESSAGE_CONTENT);
         jdaBuilder.enableIntents(GatewayIntent.GUILD_VOICE_STATES);
+        jdaBuilder.enableIntents(GatewayIntent.GUILD_MEMBERS);
 
         jdaBuilder.build();
     }

@@ -11,9 +11,8 @@ public class VoiceJoinPinger extends ListenerAdapter {
             var member = event.getMember();
             var channelJoined = event.getChannelJoined();
 
-            TextChannel general = event.getJDA().getTextChannelById(1551592571430633517L);
-            general.sendMessage("@everyone SOMEONE IS STUDYING!").queue();
-            System.out.printf("%s joined voice channel: %s%n", member.getEffectiveName(), channelJoined.getName());
+            TextChannel tuxxyChannel = event.getJDA().getTextChannelById(1552320563572252784L);
+            tuxxyChannel.sendMessage("@everyone " + member.getEffectiveName() + " IS STUDYING " + channelJoined + "!").queue();
         }
     }
 }

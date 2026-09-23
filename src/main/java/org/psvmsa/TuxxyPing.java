@@ -15,14 +15,13 @@ public class TuxxyPing extends ListenerAdapter
         if (!event.getAuthor().isBot())
         {
             Message message = event.getMessage();
-            String content = message.getContentRaw();
+            String author = event.getAuthor().getName();
+            String content = message.getContentStripped();
 
-            if (content.startsWith("!ping"))
+            if (content.startsWith("@Tuxxy"))
             {
                 MessageChannel channel = event.getChannel();
-                channel.sendMessage("Pidaru o zis: " + content).queue();
-
-                System.out.println("mama moarta");
+                channel.sendMessage("Nrk " + author).queue();
             }
         }
     }
